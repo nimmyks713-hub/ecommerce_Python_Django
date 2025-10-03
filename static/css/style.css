@@ -1,0 +1,134 @@
+.main{
+    background-color:whitesmoke;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.offer{
+    width:290px;
+    background-color: white;
+    border-radius:12px;
+    padding:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+    text-align:center;
+    font-family: sans-serif;
+    margin:10px;
+}
+.contain{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.offer h4{
+    margin-bottom:12px;
+    font-size:16px;
+    color:#333;
+    font-weight: bold;
+}
+.image-container{
+    border-radius:8px;
+    margin:8px auto;
+    padding:10px;
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.image-container img{
+    max-height:80px;
+    width:90px;
+    object-fit:contain;
+}
+.amazon-card-title{
+    color:#333;
+    font-size:13px;
+    margin-top: 6px;
+    margin-bottom:10px;
+}
+a{
+    color:#007185;
+    text-decoration: none;
+    font-weight:500;
+    font-size:14px;
+    display:inline-block;
+    margin-top:10px;
+}
+a:hover{
+    text-decoration: underline;
+}
+.prodcard{
+    width:220px;
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-radius: 8px;
+    padding:12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top:20px;
+}
+.image{
+    width:100%;
+    height:180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.title{
+    font-size:16px;
+    font-weight:600;
+    margin:10px 0;
+    height:40px;
+    overflow:hidden;
+}
+.price{
+    font-size:18px;
+    font-weight:bold;
+}
+.description{
+    font-size: small;
+}
+.cart{
+    margin-top:20px;
+    border:none;
+    height:30px;
+    border-radius:4px;
+    background-color: #003153;
+    color:white;
+}
+.detail{
+display: flex;
+gap:40px;
+background-color:whitesmoke;
+}
+.detail-img img{
+width:300px;
+height:auto;
+object-fit: contain;
+border:1px solid #ccc;
+padding:10px;
+margin:20px;
+background-color: #fff;
+border-radius: 10px;
+}
+.detail-text{
+    padding-top:20px;
+}
+.amount{
+    font-weight:bold;
+    font-size: 20px;
+}
+.detailing{
+font-size:16px;
+line-height:1.6;
+}
+.add_cart{
+    background-color: #f0c14b;
+    border:1px solid #a88734;
+    padding:10px 20px;
+    font-size:16px;
+    border-radius:5px;
+    cursor: pointer;
+    margin-bottom:20px;
+}
+.add_cart:hover{
+  background-color: #e2b33c;
+}

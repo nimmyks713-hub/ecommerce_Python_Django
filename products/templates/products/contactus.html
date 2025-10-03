@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<body style="background-color:#e6e6e6 ;">
+<div class="contact-container" style="max-width:800px; margin:50px auto; padding:20px; background:#f9f9f9; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h1 style="text-align:center; color:#333;">Contact Us</h1>
+    <p style="text-align:center; color:#555;">We’d love to hear from you! Fill out the form below or reach us directly.</p>
+
+    <form method="post" style="margin-top:20px;">
+        {% csrf_token %}
+        <div style="margin-bottom:15px;">
+            <label for="name">Your Name</label><br>
+            <input type="text" id="name" name="name" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+        </div>
+        <div style="margin-bottom:15px;">
+            <label for="email">Your Email</label><br>
+            <input type="email" id="email" name="email" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;">
+        </div>
+        <div style="margin-bottom:15px;">
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px;"></textarea>
+        </div>
+        <button type="submit" style="background:#007bff; color:#fff; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
+    </form>
+
+    <div style="margin-top:30px; text-align:center;">
+        <h3>Our Contact Information</h3>
+        <p><strong>Email:</strong> support@myshop.com</p>
+        <p><strong>Phone:</strong> +1 234 567 890</p>
+        <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+    </div>
+</div>
+</body>
+{% endblock %}

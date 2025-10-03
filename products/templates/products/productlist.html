@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h3 style="margin-left:10px;">Product List</h3>
+<p style="margin-left: 10px;font-size: smaller;">Our most popular products based on sales. Updated frequently.</p>
+<div style="display:flex;justify-content: space-between;flex-wrap: wrap;">
+    {% for product in products %}
+        <div class="prodcard" style="width: 18rem; margin:10px;">
+            <img src="{% static product.image %}" style="height:200px; object-fit:contain;" class="card-img-top image" alt="{{ product.title }}">
+            <div class="card-body">
+                <a href="/products/{{product.id}}" class="text-decoration-none text-dark">
+                    <h5 class="title">{{ product.title }}</h5>
+                </a>
+                <p class="description">{{ product.description|truncatechars:100 }}</p>
+                <p>
+                 {% for i in "12345" %}
+                 {% if forloop.counter <= product.rating %}
+                  ⭐
+                {% endif %}
+                {% endfor %}
+                <small class="text-muted"><strong>({{ product.rating }}/5)</strong></small>
+                </p>
+                <p class="price"><strong>${{ product.price }}</strong></p>
+                <button class='cart'>More Details</button>
+            </div>
+        </div>
+    {% empty %}
+        <p>No products available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

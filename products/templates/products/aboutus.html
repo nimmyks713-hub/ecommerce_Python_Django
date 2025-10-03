@@ -1,0 +1,44 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %} About Us - Shopaholic {% endblock %}
+
+{% block content %}
+<body style="background-color: #F0FFFF;">
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="mb-4">About Shopaholic</h2>
+      <p>
+        Welcome to <strong>Shopaholic</strong>, your one-stop destination for fashion, 
+        electronics, accessories, and more. We started with a simple vision: to bring 
+        the best products to your doorstep with unbeatable prices and amazing service.
+      </p>
+      <p>
+        Our journey began in 2020, and today we’re proud to serve thousands of happy 
+        customers across the region. Whether you’re shopping for trendy clothing, 
+        everyday essentials, or the latest gadgets, Shopaholic is here for you.
+      </p>
+      <ul class="list-unstyled">
+        <li>✅ High-quality products</li>
+        <li>✅ Secure online shopping</li>
+        <li>✅ Fast and reliable delivery</li>
+        <li>✅ Friendly customer support</li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="{% static 'images/aboutus.jpg' %}" class="img-fluid rounded shadow" alt="About us"/>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col text-center">
+      <h3>Our Mission</h3>
+      <p class="lead">
+        To make shopping easy, enjoyable, and affordable for everyone.
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+{% endblock %}

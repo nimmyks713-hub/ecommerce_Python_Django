@@ -1,0 +1,40 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %} {{ product.title }} {% endblock %}
+<body style="background-color: whitesmoke;">
+{% block content %}
+<div class="detail">
+<div class="detail-img">
+<img src="{% static product.image %}" style="width:300px; height:300px; object-fit:contain;" alt="{{ product.title }}">
+</div>
+<div class="detail-text">
+<h4>{{ product.title }}</h4>
+<p class="amount"><strong>Price:</strong> ${{ product.price }}</p>
+<p>
+                 {% for i in "12345" %}
+                 {% if forloop.counter <= product.rating %}
+                  ⭐
+                {% endif %}
+                {% endfor %}
+                <small class="text-muted"><strong>({{ product.rating }}/5)</strong></small>
+                </p>
+                <hr/>
+                <div>
+                <h5>Available offers</h5>
+                <ul>
+                    <li>10% instant discount on ICICI Credit Cards</li>
+                    <li>No cost EMI available on orders above Rs. 3000</li>
+                    <li>Get extra Rs. 200 off with UPI payment</li>
+                    <li>Axis Bank 5% Cashback on Shopaholic Axis Credit Card</li>
+                </ul>
+            </div>
+            <hr/>
+            <h5>About this item</h5>
+            <p class="detailing">{{product.description}}</p>
+            <button class="add_cart">Add to cart</button>
+        </div>
+</div>
+</div>
+{% endblock %}
+</body>
