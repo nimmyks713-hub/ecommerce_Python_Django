@@ -32,7 +32,10 @@
             <hr/>
             <h5>About this item</h5>
             <p class="detailing">{{product.description}}</p>
-            <button class="add_cart">Add to cart</button>
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+           {% csrf_token %}
+          <button class="add_cart">Add to Cart</button>
+          </form>
         </div>
 </div>
 </div>

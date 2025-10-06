@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 
-LOGIN_REDIRECT_URL='/profile'
+LOGIN_REDIRECT_URL='/products'
 LOGOUT_REDIRECT_URL='/products'
 
 # Default primary key field type

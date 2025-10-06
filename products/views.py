@@ -1,10 +1,10 @@
 from django.shortcuts import get_object_or_404, render, redirect,HttpResponse
-from . models import Products
+from . models import Products,CartItem
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
-
-# Create your views here.
 def index(request):
     offers=[
         {
@@ -162,5 +162,30 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, "products/signup.html", {"form": form})
+
+@login_required
+def profile(request):
+    return render(request, 'products/profile.html')
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Products, id=product_id)
+    cart_item, created = CartItem.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
+    return redirect('cart_view')
+
+def cart_view(request):
+    cart_items = CartItem.objects.filter(user=request.user)
+    total = sum(item.product.price * item.quantity for item in cart_items)
+    return render(request, 'products/cart.html', {'cart_items': cart_items, 'total': total})
+
+@require_POST
+def delete_cart_item(request, item_id):
+    item = CartItem.objects.get(id=item_id, user=request.user)
+    item.delete()
+    return redirect('cart_view')
+
+
 
 
